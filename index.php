@@ -19,17 +19,15 @@ if(isset($_GET['id']) || isset($_GET['pw'])){
     include './dbconn.php';
 
     if(preg_match('/\'/i', $_GET['id'])) exit("~~filtering~~");
-    if(preg_match('/and|or|substr|ascii/i', $_GET['pw'])) exit("~~filtering~~");
+    if(preg_match('/and|or|substr|ascii|=/i', $_GET['pw'])) exit("~~filtering~~");
     $id = str_replace("admin","",$_GET['id']);
     $pw = $_GET['pw'];
 
     $query = "select id from user where id='{$id}';";
     $result = mysqli_fetch_array(mysqli_query($conn, $query));
-
     if(isset($result['id'])) {
       $query = "select pw from user where id='{$id}' and pw='{$pw}';";
       $result = mysqli_fetch_array(mysqli_query($conn, $query));
-
       if(isset($result['pw'])) {
         if($pw == $result['pw']) {
           $msg = "Hello {$id} :)<br>";
