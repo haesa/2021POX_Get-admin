@@ -7,7 +7,7 @@
     <body>
         <div class="wrap">
           <h2 class="tit">Blind SQL Injection</h2>
-          <form action="index1.php" method="GET">
+          <form action="index.php" method="GET">
               <input type="text" name="id" placeholder="ID">
               <input type="text" name="pw" placeholder="PW">
               <input type="submit" value="Login">
