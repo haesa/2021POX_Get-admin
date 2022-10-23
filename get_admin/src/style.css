@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* layout */
+body {
+  background: #5a3328;
+}
+
+.wrap {
+  width: 55%;
+  margin: 20px auto 0;
+  padding: 20px 20px 40px;
+  background: #cca594;
+  text-align: center;
+}
+
+.wrap h2.tit {
+  font-family: "Bebas Neue", cursive;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #7d4a3b;
+}
+
+input[type="text"] {
+  font-family: "Roboto Condensed", sans-serif;
+  border: none;
+  border-bottom: solid 1px #2e1d1e;
+  background-color: #cca594;
+  padding: 20px 0px 5px 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 18px;
+}
+
+input[type="password"] {
+  border: none;
+  border-bottom: solid 1px #2e1d1e;
+  background-color: #cca594;
+  padding: 20px 0px 5px 0px;
+  width: 100%;
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  background-color: #5a3328;
+  border: none;
+  color: #cca594;
+  border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  font-size: 18px;
+  margin-top: 30px;
+  font-family: "Bebas Neue";
+}
+
+input::placeholder {
+  color: #5a3328;
+  font-size: 15px;
+}
+
+input:focus {
+  border-bottom: solid 1px #b18c70;
+  outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #cca594;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #cca594 inset;
+}
+
+.msg {
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Bebas Neue";
+  color: #5a3328;
+}
+
+.img {
+  display: block;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+version: "3.1"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${APP_NAME}
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    volumes:
+      - ./src:/var/www/html
+
+  db:
+    image: mysql:5.6
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: ${APP_NAME}-db
+    ports:
+      - 3310:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: siss21
+      MYSQL_DATABASE: web_hacking
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
